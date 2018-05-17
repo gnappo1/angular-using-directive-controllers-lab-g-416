@@ -1,3 +1,11 @@
+function EditUsernameController($scope) {
+    $scope.username = $scope.username.toLowerCase();
+}
+
+angular
+    .module('app')
+    .controller('EditUsernameController', EditUsernameController);
+
 function ContactCard() {
 	return {
 		scope: {
@@ -19,6 +27,7 @@ function ContactCard() {
 				'<span class="username">{{ username }}</span>',
 			'</div>'
 		].join(''),
+		controller: 'EditUsernameController as ctrl',
 		restrict: 'E'
 	};
 }
